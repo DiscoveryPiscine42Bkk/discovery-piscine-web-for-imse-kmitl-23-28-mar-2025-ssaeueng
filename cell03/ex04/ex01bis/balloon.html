@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Balloon Game</title>
+            <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+                <style>
+                    .container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    }
+                    #balloon {
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    background-color: rgb(25, 0, 255);
+                    transition: 0.2s;
+                    }
+                </style>
+</head>
+<body>
+    <div class="container">
+        <div id="balloon"></div>
+    </div>
+
+    <script>
+        const colors = ["rgb(255, 0, 0)", "rgb(0, 255, 0)", "rgb(0, 0, 255)"];
+
+        $("#balloon").on({
+            click: function () {
+                let size = $(this).width() + 10;
+                let newSize = size > 420 ? 200 : size;
+                let currentColor = $(this).css("background-color");
+                let nextColor = colors[(colors.indexOf(currentColor) + 1) % colors.length];
+
+                $(this).css({ width: newSize, height: newSize, backgroundColor: nextColor });
+            },
+            mouseleave: function () {
+                let size = $(this).width() - 5;
+                let newSize = Math.max(size, 200);
+                let currentColor = $(this).css("background-color");
+                let nextColor = colors[(colors.indexOf(currentColor) + 1) % colors.length];
+
+                $(this).css({ width: newSize, height: newSize, backgroundColor: nextColor });
+            }
+        });
+    </script>
+</body>
+</html>
