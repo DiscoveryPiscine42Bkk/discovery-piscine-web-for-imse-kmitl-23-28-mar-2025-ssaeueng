@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            scroll-behavior: smooth;
+        }
+        .bg-overlay, .section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .bg-overlay {
+            background: url('https://travel.rakuten.com/contents/sites/contents/files/styles/max_1300x1300/public/2024-01/cherry-blossom-tokyo_1.jpg?itok=0QxOQj7Q') no-repeat center center/cover;
+        }
+        .bg-overlay::before, .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(124, 95, 109, 0.6);
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .btn-custom {
+            margin: 10px;
+            border: 1px solid white;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-custom:hover {
+            background: white;
+            color: #9e31a881;
+        }
+        #back-button {
+            display: none;
+            margin: 20px;
+            padding: 10px 20px;
+            background: white;
+            color: #44476481;
+            border: 1px solid #44476481;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-overlay" id="main-content">
+        <div class="content">
+            <h1>Welcome To Ours Resume</h1>
+            <a href="#" class="btn btn-custom" onclick="loadPage('sorawit page.html'); return false;">Sorawit</a>
+            <a href="#" class="btn btn-custom" onclick="loadPage('sariya page.html'); return false;">Sariya</a>
+
+        </div>
+    </div>
+    
+    <button id="back-button" onclick="goBack()">Back</button>
+    <div id="page-content"></div>
+    
+    <script>
+        function loadPage(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('page-content').innerHTML = data;
+                    document.getElementById('main-content').style.display = 'none';
+                    document.getElementById('back-button').style.display = 'block';
+                });
+        }
+        function goBack() {
+            document.getElementById('page-content').innerHTML = '';
+            document.getElementById('main-content').style.display = 'flex';
+            document.getElementById('back-button').style.display = 'none';
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

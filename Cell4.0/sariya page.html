@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            scroll-behavior: smooth;
+        }
+        .bg-overlay, .section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .bg-overlay {
+            background: url('background_sariya01.jpg') no-repeat center center/cover;
+        }
+        .bg-overlay::before, .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(110, 108, 112, 0.6);
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            
+        }
+        #detail .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* ทำให้ข้อความอยู่ซ้าย และรูปอยู่ขวาสุด */
+            width: 100%;
+            padding: 20px;
+        }
+        .btn-custom {
+            margin: 10px;
+            border: 1px solid white;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-custom:hover {
+            background: white;
+            color: #00000062;
+        }
+        #about  {
+            background: url('background_sariya02.jpg') no-repeat center center/cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+        .image img {
+            width: 350px;
+            height: auto;
+        }    
+        #detail {
+            background: url('background_sariya03.jpg') no-repeat center center/cover;
+        }
+
+        #contact {
+            background: url('background_sariya04.jpg') no-repeat center center/cover;
+        }
+        
+        #detail {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* ข้อความอยู่ซ้ายสุด รูปอยู่ขวาสุด */
+            padding: 20px;
+        }
+
+        .lift-aling {
+            text-align: left; /* ทำให้ข้อความชิดซ้าย */
+            width: 60%; /* จำกัดความกว้างของข้อความ */
+        }
+
+        .right-image {
+            margin-left: 20; /* ดันให้รูปภาพชิดขวาสุด */
+            flex-shrink: 0; /* ป้องกันรูปถูกย่อ */
+        }
+
+        .right-image img {
+            width: 550px; /* ปรับขนาดรูป */
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-overlay">
+        <div class="content">
+            <h1>Sariya Yongkittamook</h1>
+            <h2>DR</h2>
+            <a href="#about" class="btn btn-custom">About Me</a>
+            <a href="#detail" class="btn btn-custom">detail</details></a>
+            <a href="#contact" class="btn btn-custom">contact</a>
+        </div>
+    </div>
+    
+    <section id="about" class="section">
+        <div class="content">
+            <h1>About Me</h1>
+            <h1>-------------------</h1>
+            <div class="image">
+                <img src="sariya_photo.jpg" >
+            </div>
+            <h1>-------------------</h1>
+            <h2>สริยา ยงกฤตมุข</h2>
+            <h2>ง่วง</h2>
+        </div>
+    </section>
+    
+    <section id="detail" class="section">
+        <div class="content">
+            <div class="lift-aling">
+                <h1>My Detail</h1>
+                <h1>-------------------</h1>
+                <h2>- ไม่กินเผ็ดเลยแม้แต่นิดเดียว</h2>
+                <h2>- ชอบนอน นอนได้ทั้งวัน นั้งเฉยๆก็หลับได้</h2>
+                <h2>- ติดเกมส์กาชา อดข้าวเติมเกมส์</h2>
+                <h2>- กินเยอะ หิวง่าย</h2>
+                <h2>- ชอบมินเนี่ยน</h2>
+                <h2>- ขี้เกียจ</h2>
+            </div>
+            <div class="right-image">
+                <img src="sariya01.png" alt="รูปชิดขวา">
+            </div>
+        </div>    
+    </section>
+    
+    <section id="contact" class="section">
+        <div class="content">
+            <h1>Contact</h1>
+            <h2>tel. 063-553-9415</h2>
+            <h2>sariyadr@gmail.com</h2>
+            <h2>Id Line : saiyadr</h2>
+            <h2>IG : s_ssariya</h2>
+        </div>
+    </section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
